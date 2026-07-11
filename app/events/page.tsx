@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import BookEventForm from "@/components/BookEventForm";
 import { site, IMG, EVENT_TYPES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -85,22 +86,30 @@ export default function EventsPage() {
         </Reveal>
       </section>
 
-      {/* BOOK YOUR EVENT — form embed placeholder */}
+      {/* BOOK YOUR EVENT — Web3Forms-wired request form */}
       <section className="border-t border-line bg-char">
-        <div className="mx-auto max-w-[760px] px-6 py-20 text-center md:px-8 md:py-24">
+        <div className="mx-auto max-w-[820px] px-6 py-20 md:px-8 md:py-24">
           <Reveal>
-            <span className="label">Book Your Event</span>
-            <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
-              Reserve the room
-            </h2>
+            <div className="text-center">
+              <span className="label">Book Your Event</span>
+              <h2 className="mt-4 font-display text-[clamp(24px,4vw,38px)] font-light leading-tight text-parchment">
+                Request to Book a Large Party or Event
+              </h2>
+            </div>
 
-            <div className="mt-8 flex min-h-[220px] flex-col items-center justify-center gap-4 border border-dashed border-line bg-char2 px-6 py-12">
-              {/* EMBED: Book An Event form goes here */}
-              <p className="font-sans text-[15px] font-light text-parchdim">
-                Booking form coming soon — call us to reserve.
+            <div className="mt-10">
+              <BookEventForm />
+            </div>
+
+            <div className="mt-10 text-center">
+              <p className="font-sans text-[14px] text-parchmute">
+                Prefer to talk it through? Give us a call.
               </p>
-              <a href={site.phoneHref} className="btn btn-solid">
-                Call {site.phone}
+              <a
+                href={site.phoneHref}
+                className="mt-1 inline-block font-display text-[26px] text-brass transition-colors hover:text-brasslt"
+              >
+                {site.phone}
               </a>
             </div>
           </Reveal>
