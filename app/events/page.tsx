@@ -43,8 +43,8 @@ export default function EventsPage() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <a href={site.phoneHref} className="btn btn-solid">
-              Call to Book
+            <a href="#book-event" className="btn btn-solid">
+              Request to Book
             </a>
             <a
               href={site.ext.ezcater}
@@ -76,10 +76,10 @@ export default function EventsPage() {
                 Questions about availability or group size?
               </p>
               <a
-                href={site.phoneHref}
-                className="mt-1 inline-block font-display text-[26px] text-brass transition-colors hover:text-brasslt"
+                href="#book-event"
+                className="mt-1 inline-block font-display text-[20px] text-brass transition-colors hover:text-brasslt"
               >
-                {site.phone}
+                Send us the details below
               </a>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function EventsPage() {
       </section>
 
       {/* BOOK YOUR EVENT — Web3Forms-wired request form */}
-      <section className="border-t border-line bg-char">
+      <section id="book-event" className="scroll-mt-24 border-t border-line bg-char">
         <div className="mx-auto max-w-[820px] px-6 py-20 md:px-8 md:py-24">
           <Reveal>
             <div className="text-center">
@@ -99,18 +99,6 @@ export default function EventsPage() {
 
             <div className="mt-10">
               <BookEventForm />
-            </div>
-
-            <div className="mt-10 text-center">
-              <p className="font-sans text-[14px] text-parchmute">
-                Prefer to talk it through? Give us a call.
-              </p>
-              <a
-                href={site.phoneHref}
-                className="mt-1 inline-block font-display text-[26px] text-brass transition-colors hover:text-brasslt"
-              >
-                {site.phone}
-              </a>
             </div>
           </Reveal>
         </div>

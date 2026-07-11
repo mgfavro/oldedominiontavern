@@ -196,7 +196,7 @@ export default function BookEventForm() {
 
       {status === "error" && (
         <p className="mt-6 text-center font-sans text-[14px] text-wine">
-          Something went wrong — please try again or call us.
+          Something went wrong — please try again.
         </p>
       )}
 
