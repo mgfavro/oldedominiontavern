@@ -6,19 +6,21 @@
    Fonts:   font-display (Cormorant), font-sans (Jost, also the default)
    --------------------------------------------------------------------------- */
 @theme {
-  --color-void: #100c09; /* page background — deep warm near-black */
-  --color-char: #17120e; /* panels */
-  --color-char2: #201911; /* raised panels / cards */
-  --color-line: #34281b; /* hairline borders */
-  --color-parchment: #ece3d2; /* primary text */
-  --color-parchdim: #b9ab92; /* secondary text */
-  --color-parchmute: #8c7d67; /* muted / captions */
-  --color-brass: #bd9a5f; /* accent — restrained gold */
-  --color-brasslt: #ddc290; /* accent highlight */
-  --color-wine: #5c2a2a; /* rare deep accent */
+  /* Light "classic tavern" palette matched to oldedominiontavern.com.
+     Token names are unchanged; only their values differ from the dark theme. */
+  --color-void: #ffffff; /* page background — white */
+  --color-char: #f4f0e8; /* warm off-white section band */
+  --color-char2: #fbf8f2; /* raised panels / cards */
+  --color-line: #e4dfd3; /* warm hairline borders */
+  --color-parchment: #191917; /* primary text — near-black */
+  --color-parchdim: #4a4a46; /* secondary text */
+  --color-parchmute: #86847d; /* muted / captions */
+  --color-brass: #04371d; /* accent — deep forest green (legacy signature) */
+  --color-brasslt: #3f7652; /* accent highlight — medium sage green */
+  --color-wine: #123f27; /* rare deep accent */
 
-  --font-display: var(--font-cormorant), "Cormorant Garamond", serif;
-  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cinzel), "Cinzel", serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
   --tracking-label: 0.28em;
   --tracking-wordmark: 0.18em;
@@ -44,9 +46,17 @@
     color: var(--color-parchment);
     -webkit-font-smoothing: antialiased;
   }
+  /* Legacy site sets every heading in all-caps Cinzel. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
   ::selection {
     background: var(--color-brass);
-    color: var(--color-void);
+    color: #ffffff;
   }
 }
 
@@ -90,16 +100,16 @@
     justify-content: center;
     font-family: var(--font-sans);
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     padding: 15px 30px;
     transition: all 0.25s ease;
     white-space: nowrap;
   }
   .btn-solid {
     background: var(--color-brass);
-    color: #17120e;
+    color: #ffffff;
   }
   .btn-solid:hover {
     background: var(--color-brasslt);
@@ -110,7 +120,7 @@
   }
   .btn-ghost:hover {
     background: var(--color-brass);
-    color: #17120e;
+    color: #ffffff;
   }
 }
 

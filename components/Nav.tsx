@@ -8,7 +8,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-void/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brass/95 backdrop-blur">
       <nav className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 md:px-8">
         <Link
           href="/"
@@ -30,7 +30,7 @@ export default function Nav() {
             <Link
               key={n.href}
               href={n.href}
-              className="font-sans text-[13px] uppercase tracking-[0.14em] text-parchdim transition-colors hover:text-parchment"
+              className="font-sans text-[13px] uppercase tracking-[0.14em] text-white/80 transition-colors hover:text-white"
             >
               {n.label}
             </Link>
@@ -39,7 +39,7 @@ export default function Nav() {
             href={site.ext.resy}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-solid"
+            className="btn bg-white text-brass hover:bg-white/85"
           >
             Reserve a Table
           </a>
@@ -48,7 +48,7 @@ export default function Nav() {
         {/* mobile toggle */}
         <button
           onClick={() => setOpen(true)}
-          className="text-parchment lg:hidden"
+          className="text-white lg:hidden"
           aria-label="Open menu"
         >
           <svg
@@ -68,8 +68,8 @@ export default function Nav() {
 
       {/* mobile menu */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-void lg:hidden">
-          <div className="flex items-center justify-between border-b border-line px-6 py-4">
+        <div className="fixed inset-0 z-50 bg-brass lg:hidden">
+          <div className="flex items-center justify-between border-b border-white/15 px-6 py-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={LOGO.white}
@@ -78,7 +78,7 @@ export default function Nav() {
             />
             <button
               onClick={() => setOpen(false)}
-              className="text-parchment"
+              className="text-white"
               aria-label="Close menu"
             >
               <svg
@@ -100,7 +100,7 @@ export default function Nav() {
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-line/60 py-4 font-display text-[26px] font-light text-parchment"
+                className="border-b border-white/15 py-4 font-display text-[26px] text-white"
               >
                 {n.label}
               </Link>
@@ -109,7 +109,7 @@ export default function Nav() {
               href={site.ext.resy}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-solid mt-6"
+              className="btn bg-white text-brass mt-6"
             >
               Reserve a Table
             </a>

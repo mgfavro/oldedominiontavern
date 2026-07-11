@@ -29,7 +29,7 @@ export default function Home() {
               The neighborhood table,
               <br />
               set a touch{" "}
-              <em className="font-medium italic text-brass">higher</em>.
+              <em className="font-medium not-italic text-brass">higher</em>.
             </h1>
 
             <p className="mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-light leading-relaxed text-parchment/90">
@@ -66,7 +66,7 @@ export default function Home() {
           {[...MARQUEE, ...MARQUEE].map((m, i) => (
             <span
               key={i}
-              className="mx-6 font-display text-[22px] italic text-parchdim"
+              className="mx-6 font-display text-[22px] tracking-[0.06em] text-parchdim"
             >
               {m}
               <span className="mx-4 text-brass">◆</span>
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
             {FOOD_CATEGORIES.map((c, i) => (
               <Reveal key={c.name} delay={i * 80}>
-                <div className="h-full bg-char2 p-8 transition-colors hover:bg-[#261e14] md:p-10">
+                <div className="h-full bg-char2 p-8 transition-colors hover:bg-[#eef2ee] md:p-10">
                   <h3 className="font-display text-[26px] font-medium text-parchment">
                     {c.name}
                   </h3>
