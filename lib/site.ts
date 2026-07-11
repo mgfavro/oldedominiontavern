@@ -21,16 +21,17 @@ export const site = {
   },
 } as const;
 
-/** Primary internal routes (rendered in nav). */
-export const nav = [
+/** Primary navigation (rendered in the header). Some items link out. */
+export const nav: { label: string; href: string; external?: boolean }[] = [
+  { label: "Reservations", href: site.ext.resy, external: true },
   { label: "Menus", href: "/menus" },
-  { label: "Events", href: "/events" },
-  { label: "Farm Van", href: "/farm-van" },
+  { label: "Order Online", href: site.ext.toast, external: true },
+  { label: "Large Parties", href: "/events" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Farm Van", href: "/farm-van" },
   { label: "Dog of the Month", href: "/dogs" },
   { label: "Join Our Team", href: "/careers" },
-  { label: "Visit", href: "/visit" },
-] as const;
+];
 
 /** Brand marks (in /public). White wordmark for the dark nav/footer. */
 export const LOGO = {

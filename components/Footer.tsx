@@ -30,16 +30,26 @@ export default function Footer() {
         <div>
           <div className="label mb-4 text-white/60">Explore</div>
           <ul className="space-y-2.5">
-            {nav.map((n) => (
-              <li key={n.href}>
-                <Link
-                  href={n.href}
-                  className="font-sans text-[14px] text-white/80 transition-colors hover:text-white"
-                >
-                  {n.label}
-                </Link>
-              </li>
-            ))}
+            {nav
+              .filter((n) => !n.external)
+              .map((n) => (
+                <li key={n.href}>
+                  <Link
+                    href={n.href}
+                    className="font-sans text-[14px] text-white/80 transition-colors hover:text-white"
+                  >
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            <li>
+              <Link
+                href="/visit"
+                className="font-sans text-[14px] text-white/80 transition-colors hover:text-white"
+              >
+                Visit
+              </Link>
+            </li>
           </ul>
         </div>
 

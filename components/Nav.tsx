@@ -3,52 +3,53 @@
 import { useState } from "react";
 import Link from "next/link";
 import { site, nav, LOGO } from "@/lib/site";
+import { InstagramIcon, FacebookIcon } from "@/components/SocialIcons";
+
+const linkClass =
+  "font-sans text-[13px] uppercase tracking-[0.16em] text-white/85 transition-colors hover:text-white";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brass/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 md:px-8">
-        <Link
-          href="/"
-          className="flex items-center"
-          onClick={() => setOpen(false)}
-          aria-label="Olde Dominion Tavern — home"
-        >
+      {/* desktop: centered logo above a centered link row */}
+      <div className="mx-auto hidden max-w-[1240px] flex-col items-center gap-5 px-6 py-6 lg:flex">
+        <Link href="/" aria-label="Olde Dominion Tavern — home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={LOGO.white}
             alt="Olde Dominion Tavern"
-            className="h-9 w-auto md:h-10"
+            className="h-20 w-auto xl:h-24"
           />
         </Link>
 
-        {/* desktop */}
-        <div className="hidden items-center gap-8 lg:flex">
-          {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="font-sans text-[13px] uppercase tracking-[0.14em] text-white/80 transition-colors hover:text-white"
-            >
-              {n.label}
-            </Link>
-          ))}
-          <a
-            href={site.ext.resy}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn bg-white text-brass hover:bg-white/85"
-          >
-            Reserve a Table
-          </a>
-        </div>
+        <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+          {nav.map((n) =>
+            n.external ? (
+              <a
+                key={n.label}
+                href={n.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                {n.label}
+              </a>
+            ) : (
+              <Link key={n.label} href={n.href} className={linkClass}>
+                {n.label}
+              </Link>
+            ),
+          )}
+        </nav>
+      </div>
 
-        {/* mobile toggle */}
+      {/* mobile: hamburger + centered logo */}
+      <div className="flex items-center justify-between px-6 py-4 lg:hidden">
         <button
           onClick={() => setOpen(true)}
-          className="text-white lg:hidden"
+          className="text-white"
           aria-label="Open menu"
         >
           <svg
@@ -64,17 +65,29 @@ export default function Nav() {
             <line x1="3" y1="17" x2="21" y2="17" />
           </svg>
         </button>
-      </nav>
 
-      {/* mobile menu */}
+        <Link href="/" aria-label="Olde Dominion Tavern — home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={LOGO.white}
+            alt="Olde Dominion Tavern"
+            className="h-12 w-auto"
+          />
+        </Link>
+
+        {/* spacer to keep the logo centered opposite the hamburger */}
+        <span className="w-[26px]" aria-hidden="true" />
+      </div>
+
+      {/* mobile menu overlay */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-brass lg:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brass lg:hidden">
           <div className="flex items-center justify-between border-b border-white/15 px-6 py-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={LOGO.white}
               alt="Olde Dominion Tavern"
-              className="h-9 w-auto"
+              className="h-12 w-auto"
             />
             <button
               onClick={() => setOpen(false)}
@@ -94,25 +107,58 @@ export default function Nav() {
               </svg>
             </button>
           </div>
-          <div className="flex flex-col gap-1 px-6 py-8">
-            {nav.map((n) => (
-              <Link
-                key={n.href}
-                href={n.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-white/15 py-4 font-display text-[26px] text-white"
+
+          <div className="flex flex-col px-6 py-4">
+            {nav.map((n) =>
+              n.external ? (
+                <a
+                  key={n.label}
+                  href={n.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="border-b border-white/15 py-4 font-display text-[24px] text-white"
+                >
+                  {n.label}
+                </a>
+              ) : (
+                <Link
+                  key={n.label}
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-white/15 py-4 font-display text-[24px] text-white"
+                >
+                  {n.label}
+                </Link>
+              ),
+            )}
+
+            <div className="mt-8 flex items-center gap-5">
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/85 transition-colors hover:text-white"
               >
-                {n.label}
-              </Link>
-            ))}
-            <a
-              href={site.ext.resy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn bg-white text-brass mt-6"
-            >
-              Reserve a Table
-            </a>
+                <InstagramIcon className="h-6 w-6" />
+              </a>
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/85 transition-colors hover:text-white"
+              >
+                <FacebookIcon className="h-6 w-6" />
+              </a>
+              <a
+                href={site.phoneHref}
+                className="ml-auto font-sans text-[14px] font-medium text-white"
+              >
+                {site.phone}
+              </a>
+            </div>
           </div>
         </div>
       )}
