@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import FarmVanForm from "@/components/FarmVanForm";
-import { IMG } from "@/lib/site";
+import { site, IMG } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Farm Van",
@@ -17,7 +16,7 @@ export default function FarmVanPage() {
         eyebrow="The Patio Experience, Elevated"
         title="The Farm Van"
         subtitle="A vintage van parked right outside the tavern — pouring drinks from our bar menu alongside a rotating lineup of local vendors."
-        image={IMG.gallery}
+        image={IMG.farmvan}
       />
 
       {/* intro */}
@@ -39,24 +38,34 @@ export default function FarmVanPage() {
         </Reveal>
       </section>
 
-      {/* vendor form */}
+      {/* vendor blurb — no form, points to phone / Instagram */}
       <section className="border-t border-line bg-char">
-        <div className="mx-auto max-w-[760px] px-6 py-20 md:px-8 md:py-24">
-          <Reveal className="mb-10">
-            <span className="label">Become a Vendor</span>
+        <div className="mx-auto max-w-[720px] px-6 py-20 text-center md:px-8 md:py-24">
+          <Reveal>
+            <span className="label">Interested in Vending?</span>
             <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
-              Are you a local vendor?
+              Set up at the Farm Van
             </h2>
             <p className="mt-5 font-sans text-[16px] font-light leading-relaxed text-parchdim">
               We&apos;re always looking for talented local makers and vendors to
-              partner with. If you&apos;re interested in setting up at the Farm
-              Van, fill out the form below to tell us a little about yourself and
-              what you do — we&apos;ll be in touch!
+              partner with. If you&apos;d like to set up at the Farm Van, give us
+              a call or send us a message on Instagram — tell us a little about
+              what you do and we&apos;ll be in touch!
             </p>
-          </Reveal>
 
-          <Reveal delay={80}>
-            <FarmVanForm />
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
+              <a href={site.phoneHref} className="btn btn-solid">
+                Call {site.phone}
+              </a>
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                Message on Instagram
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>

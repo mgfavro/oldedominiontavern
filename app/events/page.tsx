@@ -84,6 +84,28 @@ export default function EventsPage() {
           </div>
         </Reveal>
       </section>
+
+      {/* BOOK YOUR EVENT — form embed placeholder */}
+      <section className="border-t border-line bg-char">
+        <div className="mx-auto max-w-[760px] px-6 py-20 text-center md:px-8 md:py-24">
+          <Reveal>
+            <span className="label">Book Your Event</span>
+            <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
+              Reserve the room
+            </h2>
+
+            <div className="mt-8 flex min-h-[220px] flex-col items-center justify-center gap-4 border border-dashed border-line bg-char2 px-6 py-12">
+              {/* EMBED: Book An Event form goes here */}
+              <p className="font-sans text-[15px] font-light text-parchdim">
+                Booking form coming soon — call us to reserve.
+              </p>
+              <a href={site.phoneHref} className="btn btn-solid">
+                Call {site.phone}
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </main>
   );
 }

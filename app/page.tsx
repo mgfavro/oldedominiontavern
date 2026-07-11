@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TWO-UP: EVENTS + DOGS */}
+      {/* TWO-UP: EVENTS + FARM VAN */}
       <section className="mx-auto grid max-w-[1240px] gap-px overflow-hidden px-0 md:grid-cols-2">
         <Reveal>
           <div className="relative flex min-h-[380px] flex-col justify-end overflow-hidden p-8 md:p-12">
@@ -174,26 +174,27 @@ export default function Home() {
             <div className="absolute inset-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={IMG.dogs}
-                alt="Dog-friendly patio"
+                src={IMG.farmvan}
+                alt="The Farm Van on the patio"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/35 to-transparent" />
             </div>
             <div className="relative">
-              <span className="label">Bring the Pup</span>
+              <span className="label">On the Patio</span>
               <h3 className="mt-3 font-display text-[34px] font-light text-parchment">
-                Dog of the Month
+                The Farm Van
               </h3>
               <p className="mt-3 max-w-md font-sans text-[15px] font-light leading-relaxed text-parchdim">
-                Our patio is always dog-friendly — and every month one very good
-                boy or girl gets the spotlight. Submit yours.
+                A vintage van parked right outside, pouring drinks from our bar
+                menu alongside a rotating lineup of local vendors — the patio
+                experience, elevated.
               </p>
               <Link
-                href="/dogs"
+                href="/farm-van"
                 className="mt-6 inline-block font-sans text-[13px] uppercase tracking-[0.14em] text-brass transition-colors hover:text-brasslt"
               >
-                Meet the dogs →
+                Visit the Farm Van →
               </Link>
             </div>
           </div>
