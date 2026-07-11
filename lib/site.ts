@@ -3,8 +3,6 @@
 export const site = {
   name: "Olde Dominion Tavern",
   tagline: "American Restaurant & Bar · Haymarket, VA",
-  phone: "(703) 754-1166",
-  phoneHref: "tel:+17037541166",
   address: { line1: "5351 Merchants View Sq", line2: "Haymarket, VA 20169" },
   mapUrl:
     "https://maps.google.com/?q=5351+Merchants+View+Sq,+Haymarket,+VA+20169",

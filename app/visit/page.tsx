@@ -30,16 +30,6 @@ export default function VisitPage() {
 
           <div className="mt-8 space-y-6">
             <div>
-              <div className="label mb-2">Phone</div>
-              <a
-                href={site.phoneHref}
-                className="font-display text-[24px] text-brass transition-colors hover:text-brasslt"
-              >
-                {site.phone}
-              </a>
-            </div>
-
-            <div>
               <div className="label mb-3">Hours</div>
               <ul className="max-w-sm space-y-1.5">
                 {HOURS.map((h) => (

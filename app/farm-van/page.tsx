@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { site, IMG } from "@/lib/site";
+import VendorForm from "@/components/VendorForm";
+import { IMG } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Farm Van",
@@ -38,33 +39,24 @@ export default function FarmVanPage() {
         </Reveal>
       </section>
 
-      {/* vendor blurb — no form, points to phone / Instagram */}
+      {/* vendor form */}
       <section className="border-t border-line bg-char">
-        <div className="mx-auto max-w-[720px] px-6 py-20 text-center md:px-8 md:py-24">
+        <div className="mx-auto max-w-[720px] px-6 py-20 md:px-8 md:py-24">
           <Reveal>
-            <span className="label">Interested in Vending?</span>
-            <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
-              Set up at the Farm Van
-            </h2>
-            <p className="mt-5 font-sans text-[16px] font-light leading-relaxed text-parchdim">
-              We&apos;re always looking for talented local makers and vendors to
-              partner with. If you&apos;d like to set up at the Farm Van, give us
-              a call or send us a message on Instagram — tell us a little about
-              what you do and we&apos;ll be in touch!
-            </p>
+            <div className="text-center">
+              <span className="label">Interested in Vending?</span>
+              <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
+                Are You a Local Vendor?
+              </h2>
+              <p className="mt-5 font-sans text-[16px] font-light leading-relaxed text-parchdim">
+                We&apos;re always looking for talented local makers and vendors
+                to partner with. Tell us a little about what you do and
+                we&apos;ll be in touch!
+              </p>
+            </div>
 
-            <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <a href={site.phoneHref} className="btn btn-solid">
-                Call {site.phone}
-              </a>
-              <a
-                href={site.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-ghost"
-              >
-                Message on Instagram
-              </a>
+            <div className="mt-10">
+              <VendorForm />
             </div>
           </Reveal>
         </div>

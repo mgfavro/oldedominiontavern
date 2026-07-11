@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import BookEventForm from "@/components/BookEventForm";
 import { site, IMG, EVENT_TYPES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -42,8 +43,8 @@ export default function EventsPage() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <a href={site.phoneHref} className="btn btn-solid">
-              Call to Book
+            <a href="#book-event" className="btn btn-solid">
+              Request to Book
             </a>
             <a
               href={site.ext.ezcater}
@@ -75,33 +76,29 @@ export default function EventsPage() {
                 Questions about availability or group size?
               </p>
               <a
-                href={site.phoneHref}
-                className="mt-1 inline-block font-display text-[26px] text-brass transition-colors hover:text-brasslt"
+                href="#book-event"
+                className="mt-1 inline-block font-display text-[20px] text-brass transition-colors hover:text-brasslt"
               >
-                {site.phone}
+                Send us the details below
               </a>
             </div>
           </div>
         </Reveal>
       </section>
 
-      {/* BOOK YOUR EVENT — form embed placeholder */}
-      <section className="border-t border-line bg-char">
-        <div className="mx-auto max-w-[760px] px-6 py-20 text-center md:px-8 md:py-24">
+      {/* BOOK YOUR EVENT — Web3Forms-wired request form */}
+      <section id="book-event" className="scroll-mt-24 border-t border-line bg-char">
+        <div className="mx-auto max-w-[820px] px-6 py-20 md:px-8 md:py-24">
           <Reveal>
-            <span className="label">Book Your Event</span>
-            <h2 className="mt-4 font-display text-[clamp(26px,4vw,40px)] font-light leading-tight text-parchment">
-              Reserve the room
-            </h2>
+            <div className="text-center">
+              <span className="label">Book Your Event</span>
+              <h2 className="mt-4 font-display text-[clamp(24px,4vw,38px)] font-light leading-tight text-parchment">
+                Request to Book a Large Party or Event
+              </h2>
+            </div>
 
-            <div className="mt-8 flex min-h-[220px] flex-col items-center justify-center gap-4 border border-dashed border-line bg-char2 px-6 py-12">
-              {/* EMBED: Book An Event form goes here */}
-              <p className="font-sans text-[15px] font-light text-parchdim">
-                Booking form coming soon — call us to reserve.
-              </p>
-              <a href={site.phoneHref} className="btn btn-solid">
-                Call {site.phone}
-              </a>
+            <div className="mt-10">
+              <BookEventForm />
             </div>
           </Reveal>
         </div>
