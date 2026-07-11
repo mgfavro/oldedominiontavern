@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, nav, HOURS } from "@/lib/site";
+import { site, nav, HOURS, LOGO } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -7,9 +7,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-[1240px] gap-12 px-6 py-16 md:grid-cols-4 md:px-8">
         {/* brand + contact */}
         <div className="md:col-span-1">
-          <div className="font-display text-[24px] font-medium tracking-wordmark text-parchment">
-            Olde Dominion <span className="text-brass">Tavern</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={LOGO.white}
+            alt="Olde Dominion Tavern"
+            className="h-11 w-auto"
+          />
           <p className="mt-4 font-sans text-[14px] leading-relaxed text-parchdim">
             {site.address.line1}
             <br />

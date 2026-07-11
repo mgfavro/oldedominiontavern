@@ -30,22 +30,37 @@ export const nav = [
   { label: "Visit", href: "/visit" },
 ] as const;
 
-/**
- * Imagery. Currently pointing at a single known-good photo so nothing renders
- * broken. Swap each of these to your own files in /public (e.g. "/hero.jpg")
- * and, ideally, move to next/image once your image domains are set.
- */
-const DEFAULT_PHOTO =
-  "https://static.wixstatic.com/media/d0442a_679e0adee34541fc9f26c29ebca1456a~mv2.jpg/v1/fill/w_1600,h_1000,fp_0.57_0.49,q_90,enc_avif,quality_auto/d0442a_679e0adee34541fc9f26c29ebca1456a~mv2.jpg";
-
-export const IMG = {
-  hero: DEFAULT_PHOTO,
-  menus: DEFAULT_PHOTO,
-  events: DEFAULT_PHOTO,
-  dogs: DEFAULT_PHOTO,
-  gallery: DEFAULT_PHOTO,
-  visit: DEFAULT_PHOTO,
+/** Brand marks (in /public). White wordmark for the dark nav/footer. */
+export const LOGO = {
+  white: "/logo-white.png",
+  emblem: "/odt.png",
 } as const;
+
+/** Hero / feature imagery — local files in /public. */
+export const IMG = {
+  hero: "/photo-wall.jpeg",
+  menus: "/steak.jpg",
+  events: "/buttersteak.jpg",
+  dogs: "/wings.jpg",
+  gallery: "/frenchonion.jpg",
+  visit: "/salmon.jpg",
+} as const;
+
+/** Gallery grid photos (in /public). */
+export const GALLERY: { src: string; alt: string }[] = [
+  { src: "/steak.jpg", alt: "Seared steak with sides" },
+  { src: "/burger.jpg", alt: "Tavern burger" },
+  { src: "/frenchonion.jpg", alt: "French onion soup" },
+  { src: "/salmon.jpg", alt: "Pan-seared salmon" },
+  { src: "/wings.jpg", alt: "Wings" },
+  { src: "/buttersteak.jpg", alt: "Butter steak" },
+  { src: "/chickensandwich.jpg", alt: "Crispy chicken sandwich" },
+  { src: "/rangoons.jpg", alt: "Crab rangoons" },
+  { src: "/chickenandmac.jpg", alt: "Chicken and mac" },
+  { src: "/slaw-burger.jpg", alt: "Slaw burger" },
+  { src: "/eggsbenedict.jpg", alt: "Eggs Benedict" },
+  { src: "/photo-wall.jpeg", alt: "Inside Olde Dominion Tavern" },
+];
 
 /** Hours — PLACEHOLDER. Replace with the real schedule. */
 export const HOURS: { day: string; time: string }[] = [

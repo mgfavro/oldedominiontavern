@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { site, nav } from "@/lib/site";
+import { site, nav, LOGO } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -12,10 +12,16 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 md:px-8">
         <Link
           href="/"
-          className="font-display text-[22px] font-medium tracking-wordmark text-parchment"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          aria-label="Olde Dominion Tavern — home"
         >
-          Olde Dominion <span className="text-brass">Tavern</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={LOGO.white}
+            alt="Olde Dominion Tavern"
+            className="h-9 w-auto md:h-10"
+          />
         </Link>
 
         {/* desktop */}
@@ -64,9 +70,12 @@ export default function Nav() {
       {open && (
         <div className="fixed inset-0 z-50 bg-void lg:hidden">
           <div className="flex items-center justify-between border-b border-line px-6 py-4">
-            <span className="font-display text-[22px] font-medium tracking-wordmark text-parchment">
-              Olde Dominion <span className="text-brass">Tavern</span>
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={LOGO.white}
+              alt="Olde Dominion Tavern"
+              className="h-9 w-auto"
+            />
             <button
               onClick={() => setOpen(false)}
               className="text-parchment"

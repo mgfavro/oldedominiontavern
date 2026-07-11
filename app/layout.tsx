@@ -21,6 +21,9 @@ const sans = Jost({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://oldedominiontavern.com",
+  ),
   title: {
     default: "Olde Dominion Tavern | American Restaurant & Bar in Haymarket, VA",
     template: "%s | Olde Dominion Tavern",
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     description:
       "A made-from-scratch American kitchen in Haymarket, VA — steak and wine by night, burgers with the family, and a patio where the dog is always welcome.",
     type: "website",
+    images: [{ url: "/odt.png", width: 1350, height: 980, alt: "Olde Dominion Tavern" }],
   },
 };
 

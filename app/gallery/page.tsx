@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { IMG } from "@/lib/site";
+import { IMG, GALLERY } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -21,16 +21,20 @@ export default function GalleryPage() {
 
       <section className="mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-24">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <Reveal key={i} delay={(i % 3) * 70}>
+          {GALLERY.map((photo, i) => (
+            <Reveal key={photo.src} delay={(i % 3) * 70}>
               <div
-                className={`flex items-center justify-center border border-line bg-char2 ${
+                className={`overflow-hidden border border-line bg-char2 ${
                   i % 5 === 0 ? "aspect-[4/5]" : "aspect-square"
                 }`}
               >
-                <span className="font-sans text-[12px] uppercase tracking-[0.14em] text-parchmute">
-                  Photo {i + 1}
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
             </Reveal>
           ))}
