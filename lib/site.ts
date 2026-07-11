@@ -38,7 +38,7 @@ export const LOGO = {
 
 /** Hero / feature imagery — local files in /public. */
 export const IMG = {
-  hero: "/photo-wall.jpeg",
+  hero: "/odt.png",
   menus: "/steak.jpg",
   events: "/buttersteak.jpg",
   dogs: "/wings.jpg",
