@@ -25,8 +25,10 @@ export const site = {
 export const nav = [
   { label: "Menus", href: "/menus" },
   { label: "Events", href: "/events" },
+  { label: "Farm Van", href: "/farm-van" },
   { label: "Gallery", href: "/gallery" },
   { label: "Dog of the Month", href: "/dogs" },
+  { label: "Join Our Team", href: "/careers" },
   { label: "Visit", href: "/visit" },
 ] as const;
 
