@@ -42,7 +42,7 @@ export const IMG = {
   hero: "/odt.png",
   menus: "/steak.jpg",
   events: "/buttersteak.jpg",
-  farmvan: "/rangoons.jpg",
+  farmvan: "/farmvan.jpeg",
   gallery: "/frenchonion.jpg",
   visit: "/salmon.jpg",
 } as const;

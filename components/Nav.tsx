@@ -71,7 +71,7 @@ export default function Nav() {
       {/* desktop */}
       <div className="mx-auto hidden max-w-[1240px] px-6 md:px-8 lg:block">
         {/* top zone: centered logo, social icons pinned right */}
-        <div className="relative flex items-center justify-center pt-8 pb-6">
+        <div className="relative flex items-center justify-center pt-4 pb-3">
           <Link href="/" aria-label="Olde Dominion Tavern — home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -86,13 +86,13 @@ export default function Nav() {
         </div>
 
         {/* bottom zone: centered nav row */}
-        <nav className="flex items-center justify-center gap-x-10 pb-6">
+        <nav className="flex items-center justify-center gap-x-10 pb-4">
           <NavLinks />
         </nav>
       </div>
 
       {/* mobile bar */}
-      <div className="flex items-center justify-between px-6 py-4 lg:hidden">
+      <div className="flex items-center justify-between px-6 py-3 lg:hidden">
         <button
           onClick={() => setOpen(true)}
           className="text-white"
