@@ -14,8 +14,8 @@ export default function Home() {
             alt="The dining room and bar at Olde Dominion Tavern"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/35 to-void" />
-          <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-void/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-void/30 via-void/10 to-void" />
+          <div className="absolute inset-0 bg-gradient-to-r from-void/55 via-void/10 to-transparent" />
         </div>
 
         <div className="relative mx-auto max-w-[1240px] px-6 pb-28 pt-28 md:px-8 md:pb-32 md:pt-36">
@@ -148,7 +148,7 @@ export default function Home() {
                 alt="Private party room"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/35 to-transparent" />
             </div>
             <div className="relative">
               <span className="label">Gather</span>
@@ -178,7 +178,7 @@ export default function Home() {
                 alt="Dog-friendly patio"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/35 to-transparent" />
             </div>
             <div className="relative">
               <span className="label">Bring the Pup</span>

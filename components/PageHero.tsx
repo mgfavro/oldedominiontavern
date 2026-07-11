@@ -16,7 +16,7 @@ export default function PageHero({
       <div className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image} alt="" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-void/70 via-void/65 to-void" />
+        <div className="absolute inset-0 bg-gradient-to-b from-void/45 via-void/25 to-void" />
       </div>
 
       <div className="relative mx-auto max-w-[1240px] px-6 py-24 md:px-8 md:py-28">
