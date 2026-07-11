@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Olde Dominion Tavern — design tokens (Tailwind v4)
+   Colors become utilities automatically: bg-void, text-parchment, border-line…
+   Fonts:   font-display (Cormorant), font-sans (Jost, also the default)
+   --------------------------------------------------------------------------- */
+@theme {
+  --color-void: #100c09; /* page background — deep warm near-black */
+  --color-char: #17120e; /* panels */
+  --color-char2: #201911; /* raised panels / cards */
+  --color-line: #34281b; /* hairline borders */
+  --color-parchment: #ece3d2; /* primary text */
+  --color-parchdim: #b9ab92; /* secondary text */
+  --color-parchmute: #8c7d67; /* muted / captions */
+  --color-brass: #bd9a5f; /* accent — restrained gold */
+  --color-brasslt: #ddc290; /* accent highlight */
+  --color-wine: #5c2a2a; /* rare deep accent */
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-label: 0.28em;
+  --tracking-wordmark: 0.18em;
+
+  --animate-marquee: marquee 46s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-void);
+    color: var(--color-parchment);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-void);
+  }
+}
+
+@layer components {
+  /* small tracked brass label */
+  .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    color: var(--color-brass);
+  }
+
+  /* brass enamel-sign divider with a small diamond */
+  .rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .rule::before,
+  .rule::after {
+    content: "";
+    height: 1px;
+    width: 56px;
+    background: var(--color-brass);
+    opacity: 0.5;
+  }
+  .rule > span {
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+    background: var(--color-brass);
+  }
+
+  /* buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 15px 30px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+  .btn-solid {
+    background: var(--color-brass);
+    color: #17120e;
+  }
+  .btn-solid:hover {
+    background: var(--color-brasslt);
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-brass);
+    color: var(--color-brass);
+  }
+  .btn-ghost:hover {
+    background: var(--color-brass);
+    color: #17120e;
+  }
+}
+
+/* scroll-reveal (paired with the <Reveal> component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
