@@ -1,27 +1,41 @@
-type IconProps = { className?: string };
+type BadgeProps = { className?: string };
 
-export function InstagramIcon({ className }: IconProps) {
+/** Instagram — magenta/purple gradient rounded square with a white camera glyph. */
+export function InstagramBadge({ className = "h-9 w-9" }: BadgeProps) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
+    <span
+      className={`inline-flex items-center justify-center rounded-[10px] bg-[linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)] ${className}`}
     >
-      <path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.42-.37-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38a3.7 3.7 0 0 1 1.38-.9c.42-.17 1.06-.37 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.73.36-1.05.68-.32.32-.52.62-.68 1.05-.13.32-.28.8-.32 1.7C3.24 8.5 3.24 8.86 3.24 12s0 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.73.68 1.05.32.32.62.52 1.05.68.32.13.8.28 1.7.32 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.73-.36 1.05-.68.32-.32.52-.62.68-1.05.13-.32.28-.8.32-1.7.06-1.24.07-1.6.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.8 2.8 0 0 0-.68-1.05 2.8 2.8 0 0 0-1.05-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06zm0 8.14A3.2 3.2 0 1 0 12 8.8a3.2 3.2 0 0 0 0 6.4zm6.3-8.34a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z" />
-    </svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#ffffff"
+        strokeWidth="2"
+        className="h-1/2 w-1/2"
+        aria-hidden="true"
+      >
+        <rect x="4" y="4" width="16" height="16" rx="4.5" />
+        <circle cx="12" cy="12" r="3.4" />
+        <circle cx="16.7" cy="7.3" r="1.1" fill="#ffffff" stroke="none" />
+      </svg>
+    </span>
   );
 }
 
-export function FacebookIcon({ className }: IconProps) {
+/** Facebook — blue rounded square with a white "f" glyph. */
+export function FacebookBadge({ className = "h-9 w-9" }: BadgeProps) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
+    <span
+      className={`inline-flex items-center justify-center rounded-[10px] bg-[#1877f2] ${className}`}
     >
-      <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" />
-    </svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="#ffffff"
+        className="h-3/5 w-3/5"
+        aria-hidden="true"
+      >
+        <path d="M13.4 21v-7.5h2.53l.38-2.94H13.4V8.68c0-.85.24-1.43 1.46-1.43h1.56V4.62c-.27-.036-1.2-.116-2.28-.116-2.26 0-3.8 1.38-3.8 3.9v2.18H7.8v2.94h2.54V21h3.06z" />
+      </svg>
+    </span>
   );
 }

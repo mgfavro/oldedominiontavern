@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/TopBar";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -48,7 +47,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="bg-void font-sans text-parchment antialiased">
-        <TopBar />
         <Nav />
         {children}
         <Footer />

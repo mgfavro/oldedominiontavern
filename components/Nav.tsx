@@ -3,49 +3,95 @@
 import { useState } from "react";
 import Link from "next/link";
 import { site, nav, LOGO } from "@/lib/site";
-import { InstagramIcon, FacebookIcon } from "@/components/SocialIcons";
+import { InstagramBadge, FacebookBadge } from "@/components/SocialIcons";
 
 const linkClass =
-  "font-sans text-[13px] uppercase tracking-[0.16em] text-white/85 transition-colors hover:text-white";
+  "font-sans text-[13px] font-medium uppercase tracking-[0.12em] text-white/85 transition-colors hover:text-white";
+
+function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
+  return (
+    <>
+      {nav.map((n) =>
+        n.external ? (
+          <a
+            key={n.label}
+            href={n.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onNavigate}
+            className={linkClass}
+          >
+            {n.label}
+          </a>
+        ) : (
+          <Link
+            key={n.label}
+            href={n.href}
+            onClick={onNavigate}
+            className={linkClass}
+          >
+            {n.label}
+          </Link>
+        ),
+      )}
+    </>
+  );
+}
+
+function SocialLinks({ size = "h-9 w-9" }: { size?: string }) {
+  return (
+    <>
+      <a
+        href={site.social.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="transition-opacity hover:opacity-90"
+      >
+        <InstagramBadge className={size} />
+      </a>
+      <a
+        href={site.social.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        className="transition-opacity hover:opacity-90"
+      >
+        <FacebookBadge className={size} />
+      </a>
+    </>
+  );
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brass/95 backdrop-blur">
-      {/* desktop: centered logo above a centered link row */}
-      <div className="mx-auto hidden max-w-[1240px] flex-col items-center gap-5 px-6 py-6 lg:flex">
-        <Link href="/" aria-label="Olde Dominion Tavern — home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={LOGO.white}
-            alt="Olde Dominion Tavern"
-            className="h-20 w-auto xl:h-24"
-          />
-        </Link>
+    <header className="sticky top-0 z-50 bg-brass shadow-sm">
+      {/* desktop */}
+      <div className="mx-auto hidden max-w-[1240px] px-6 md:px-8 lg:block">
+        {/* top zone: centered logo, social icons pinned right */}
+        <div className="relative flex items-center justify-center pt-8 pb-6">
+          <Link href="/" aria-label="Olde Dominion Tavern — home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={LOGO.white}
+              alt="Olde Dominion Tavern"
+              className="w-[280px] max-w-full"
+            />
+          </Link>
+          <div className="absolute right-0 top-1/2 flex -translate-y-1/2 items-center gap-3">
+            <SocialLinks />
+          </div>
+        </div>
 
-        <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
-          {nav.map((n) =>
-            n.external ? (
-              <a
-                key={n.label}
-                href={n.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                {n.label}
-              </a>
-            ) : (
-              <Link key={n.label} href={n.href} className={linkClass}>
-                {n.label}
-              </Link>
-            ),
-          )}
+        {/* bottom zone: centered nav row */}
+        <nav className="flex items-center justify-center gap-x-10 pb-6">
+          <NavLinks />
         </nav>
       </div>
 
-      {/* mobile: hamburger + centered logo */}
+      {/* mobile bar */}
       <div className="flex items-center justify-between px-6 py-4 lg:hidden">
         <button
           onClick={() => setOpen(true)}
@@ -71,7 +117,7 @@ export default function Nav() {
           <img
             src={LOGO.white}
             alt="Olde Dominion Tavern"
-            className="h-12 w-auto"
+            className="w-[170px]"
           />
         </Link>
 
@@ -87,7 +133,7 @@ export default function Nav() {
             <img
               src={LOGO.white}
               alt="Olde Dominion Tavern"
-              className="h-12 w-auto"
+              className="w-[170px]"
             />
             <button
               onClick={() => setOpen(false)}
@@ -109,55 +155,34 @@ export default function Nav() {
           </div>
 
           <div className="flex flex-col px-6 py-4">
-            {nav.map((n) =>
-              n.external ? (
-                <a
-                  key={n.label}
-                  href={n.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="border-b border-white/15 py-4 font-display text-[24px] text-white"
-                >
-                  {n.label}
-                </a>
-              ) : (
-                <Link
-                  key={n.label}
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-white/15 py-4 font-display text-[24px] text-white"
-                >
-                  {n.label}
-                </Link>
-              ),
-            )}
+            <div className="flex flex-col">
+              {nav.map((n) =>
+                n.external ? (
+                  <a
+                    key={n.label}
+                    href={n.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="border-b border-white/15 py-4 font-display text-[24px] text-white"
+                  >
+                    {n.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={n.label}
+                    href={n.href}
+                    onClick={() => setOpen(false)}
+                    className="border-b border-white/15 py-4 font-display text-[24px] text-white"
+                  >
+                    {n.label}
+                  </Link>
+                ),
+              )}
+            </div>
 
-            <div className="mt-8 flex items-center gap-5">
-              <a
-                href={site.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-white/85 transition-colors hover:text-white"
-              >
-                <InstagramIcon className="h-6 w-6" />
-              </a>
-              <a
-                href={site.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-white/85 transition-colors hover:text-white"
-              >
-                <FacebookIcon className="h-6 w-6" />
-              </a>
-              <a
-                href={site.phoneHref}
-                className="ml-auto font-sans text-[14px] font-medium text-white"
-              >
-                {site.phone}
-              </a>
+            <div className="mt-8 flex items-center gap-4">
+              <SocialLinks size="h-10 w-10" />
             </div>
           </div>
         </div>
