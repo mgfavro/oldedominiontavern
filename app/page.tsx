@@ -14,8 +14,8 @@ export default function Home() {
             alt="The dining room and bar at Olde Dominion Tavern"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-void/30 via-void/10 to-void" />
-          <div className="absolute inset-0 bg-gradient-to-r from-void/55 via-void/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-void/15 via-void/5 to-void" />
+          <div className="absolute inset-0 bg-gradient-to-r from-void/35 via-void/5 to-transparent" />
         </div>
 
         <div className="relative mx-auto max-w-[1240px] px-6 pb-28 pt-28 md:px-8 md:pb-32 md:pt-36">
@@ -25,11 +25,8 @@ export default function Home() {
               <span className="label">Dominion Valley · Haymarket, Virginia</span>
             </div>
 
-            <h1 className="font-display text-[clamp(52px,9vw,112px)] font-light leading-[0.95] text-parchment">
-              The neighborhood table,
-              <br />
-              set a touch{" "}
-              <em className="font-medium not-italic text-brass">higher</em>.
+            <h1 className="font-display text-[clamp(38px,6vw,76px)] font-light leading-[0.98] text-parchment">
+              The neighborhood table.
             </h1>
 
             <p className="mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-light leading-relaxed text-parchment/90">
