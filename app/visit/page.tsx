@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { site, IMG, HOURS } from "@/lib/site";
@@ -14,7 +15,7 @@ export default function VisitPage() {
       <PageHero
         eyebrow="Find Us"
         title="Visit the Tavern"
-        subtitle="In the heart of Dominion Valley. Walk-ins welcome, reservations encouraged."
+        subtitle="In the heart of Dominion Valley. Walk-ins welcome — first come, first served."
         image={IMG.visit}
       />
 
@@ -46,14 +47,9 @@ export default function VisitPage() {
           </div>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href={site.ext.resy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-solid"
-            >
-              Reserve a Table
-            </a>
+            <Link href="/reservations" className="btn btn-solid">
+              Seating Info
+            </Link>
             <a
               href={site.mapUrl}
               target="_blank"

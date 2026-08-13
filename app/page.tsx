@@ -22,28 +22,25 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="mb-7 flex items-center gap-4">
               <span className="h-px w-11 bg-brass" />
-              <span className="label">Dominion Valley · Haymarket, Virginia</span>
+              <span className="label hero-label">
+                Dominion Valley · Haymarket, Virginia
+              </span>
             </div>
 
-            <h1 className="font-display text-[clamp(38px,6vw,76px)] font-light leading-[0.98] text-parchment">
+            <h1 className="hero-text font-display text-[clamp(38px,6vw,76px)] font-semibold leading-[0.98]">
               The neighborhood table.
             </h1>
 
-            <p className="mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-light leading-relaxed text-parchment/90">
+            <p className="hero-text mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-medium leading-relaxed">
               A made-from-scratch American kitchen for every occasion — steak and
               wine by night, burgers with the family, brunch between the games,
               and a patio where the dog is always welcome.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href={site.ext.resy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-solid"
-              >
-                Reserve a Table
-              </a>
+              <Link href="/reservations" className="btn btn-solid">
+                Seating Info
+              </Link>
               <a
                 href={site.ext.toast}
                 target="_blank"
@@ -209,18 +206,13 @@ export default function Home() {
               Your table is waiting.
             </h2>
             <p className="mx-auto mt-5 max-w-lg font-sans text-[16px] font-light text-parchdim">
-              Walk-ins welcome, reservations encouraged. We&apos;ll save you a
-              seat at the bar.
+              Walk-ins welcome — we seat guests first come, first served.
+              Groups of 9 or more, email us to book.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <a
-                href={site.ext.resy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-solid"
-              >
-                Reserve a Table
-              </a>
+              <Link href="/reservations" className="btn btn-solid">
+                Seating Info
+              </Link>
               <Link href="/visit" className="btn btn-ghost">
                 Find Us
               </Link>

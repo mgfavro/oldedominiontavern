@@ -122,6 +122,21 @@
     background: var(--color-brass);
     color: #ffffff;
   }
+
+  /* Readable dark text over photo heroes — thicker weight, soft edge */
+  .hero-text {
+    color: #191917;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 12px rgba(255, 255, 255, 0.45);
+  }
+  .hero-label {
+    color: #04371d;
+    font-weight: 600;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 10px rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* scroll-reveal (paired with the <Reveal> component) */
