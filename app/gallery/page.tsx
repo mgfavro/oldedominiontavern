@@ -15,7 +15,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="A Look Inside"
         title="Gallery"
-        subtitle="The room, the bar, the patio, the plates. Drop your own photos into /public and swap these tiles in."
+        subtitle="The room, the bar, the patio, the plates."
         image={IMG.gallery}
       />
 
