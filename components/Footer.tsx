@@ -49,17 +49,15 @@ export default function Footer() {
 
         {/* order & reserve */}
         <div>
-          <div className="label mb-4 text-white/60">Order &amp; Reserve</div>
+          <div className="label mb-4 text-white/60">Order &amp; Visit</div>
           <ul className="space-y-2.5">
             <li>
-              <a
-                href={site.ext.resy}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/reservations"
                 className="font-sans text-[14px] text-white/80 transition-colors hover:text-white"
               >
-                Reserve a Table
-              </a>
+                Reservations
+              </Link>
             </li>
             <li>
               <a

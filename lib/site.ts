@@ -3,6 +3,7 @@
 export const site = {
   name: "Olde Dominion Tavern",
   tagline: "American Restaurant & Bar · Haymarket, VA",
+  email: "connect@oldedominiontavern.com",
   address: { line1: "5351 Merchants View Sq", line2: "Haymarket, VA 20169" },
   mapUrl:
     "https://maps.google.com/?q=5351+Merchants+View+Sq,+Haymarket,+VA+20169",
@@ -13,7 +14,6 @@ export const site = {
     facebook: "https://www.facebook.com/oldedominiontavern",
   },
   ext: {
-    resy: "https://resy.com/cities/haymarket-va/venues/olde-dominion-tavern",
     toast: "https://order.toasttab.com/online/olde-dominion-tavern",
     ezcater: "https://www.ezcater.com/catering/olde-dominion-tavern-3",
   },
@@ -21,7 +21,7 @@ export const site = {
 
 /** Primary navigation (rendered in the header). Some items link out. */
 export const nav: { label: string; href: string; external?: boolean }[] = [
-  { label: "Reservations", href: site.ext.resy, external: true },
+  { label: "Reservations", href: "/reservations" },
   { label: "Menus", href: "/menus" },
   { label: "Order Online", href: site.ext.toast, external: true },
   { label: "Large Parties", href: "/events" },

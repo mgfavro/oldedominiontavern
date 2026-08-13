@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Olde Dominion Tavern",
   },
   description:
-    "Haymarket's neighborhood tavern in Dominion Valley — a made-from-scratch American kitchen. Burgers, steaks, seafood, weekend brunch, and a dog-friendly patio. Reserve, order online, or host your event.",
+    "Haymarket's neighborhood tavern in Dominion Valley — a made-from-scratch American kitchen. Burgers, steaks, seafood, weekend brunch, and a dog-friendly patio. Walk-ins welcome, order online, or host your event.",
   openGraph: {
     title: "Olde Dominion Tavern",
     description:
