@@ -21,17 +21,17 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1240px] px-6 pb-28 pt-28 md:px-8 md:pb-32 md:pt-36">
           <div className="max-w-2xl">
             <div className="mb-7 flex items-center gap-4">
-              <span className="h-px w-11 bg-[#e8d3a0]" />
+              <span className="h-px w-11 bg-brass" />
               <span className="label hero-label">
                 Dominion Valley · Haymarket, Virginia
               </span>
             </div>
 
-            <h1 className="hero-text font-display text-[clamp(38px,6vw,76px)] font-light leading-[0.98]">
+            <h1 className="hero-text font-display text-[clamp(38px,6vw,76px)] font-semibold leading-[0.98]">
               The neighborhood table.
             </h1>
 
-            <p className="hero-text mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-light leading-relaxed">
+            <p className="hero-text mt-7 max-w-xl font-sans text-[clamp(17px,2.2vw,21px)] font-medium leading-relaxed">
               A made-from-scratch American kitchen for every occasion — steak and
               wine by night, burgers with the family, brunch between the games,
               and a patio where the dog is always welcome.

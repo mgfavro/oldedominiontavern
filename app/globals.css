@@ -123,18 +123,19 @@
     color: #ffffff;
   }
 
-  /* Readable text over photo heroes — cream + soft shadow, no extra overlay */
+  /* Readable dark text over photo heroes — thicker weight, soft edge */
   .hero-text {
-    color: #f5efe1;
+    color: #191917;
     text-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.55),
-      0 0 2px rgba(0, 0, 0, 0.45);
+      0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 12px rgba(255, 255, 255, 0.45);
   }
   .hero-label {
-    color: #e8d3a0;
+    color: #04371d;
+    font-weight: 600;
     text-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.55),
-      0 0 2px rgba(0, 0, 0, 0.45);
+      0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 10px rgba(255, 255, 255, 0.4);
   }
 }
 
