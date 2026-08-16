@@ -59,6 +59,10 @@ export const GALLERY: { src: string; alt: string }[] = [
   { src: "/slaw-burger.jpg", alt: "Slaw burger" },
   { src: "/eggsbenedict.jpg", alt: "Eggs Benedict" },
   { src: "/photo-wall.jpeg", alt: "Inside Olde Dominion Tavern" },
+  { src: "/burger2.jpg", alt: "Tavern burger" },
+  { src: "/crab-cakes.jpg", alt: "Crab cakes" },
+  { src: "/eggsbenedict2.jpg", alt: "Eggs Benedict" },
+  { src: "/salmon2.jpg", alt: "Pan-seared salmon" },
 ];
 
 /** Hours — PLACEHOLDER. Replace with the real schedule. */
