@@ -3,6 +3,7 @@ import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { site } from "@/lib/site";
 
 // Display: Cinzel — the all-caps serif used across oldedominiontavern.com.
 const display = Cinzel({
@@ -39,6 +40,25 @@ export const metadata: Metadata = {
   },
 };
 
+// Restaurant structured data — declares our Facebook & Instagram profiles
+// (via `sameAs`) so search engines and social crawlers link the site to them.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: site.name,
+  email: site.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.line1,
+    addressLocality: "Haymarket",
+    addressRegion: "VA",
+    postalCode: "20169",
+    addressCountry: "US",
+  },
+  hasMap: site.mapUrl,
+  sameAs: [site.social.instagram, site.social.facebook],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -47,6 +67,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="bg-void font-sans text-parchment antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Nav />
         {children}
         <Footer />

@@ -66,8 +66,8 @@ export default function MenusPage() {
 
         <Reveal className="mt-16 border-t border-line pt-12 text-center">
           <p className="font-sans text-[15px] font-light text-parchdim">
-            Ready to eat? Order online for pickup, or bring the tavern to your
-            next gathering.
+            Ready to eat? Order online for pickup, or stop in — walk-ins are
+            always welcome.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-4">
             <a
@@ -77,14 +77,6 @@ export default function MenusPage() {
               className="btn btn-solid"
             >
               Order Online
-            </a>
-            <a
-              href={site.ext.ezcater}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-            >
-              Catering
             </a>
           </div>
         </Reveal>

@@ -15,7 +15,6 @@ export const site = {
   },
   ext: {
     toast: "https://order.toasttab.com/online/olde-dominion-tavern",
-    ezcater: "https://www.ezcater.com/catering/olde-dominion-tavern-3",
   },
 } as const;
 
@@ -62,9 +61,6 @@ export const GALLERY: { src: string; alt: string }[] = [
   { src: "/burger2.jpg", alt: "Tavern burger" },
   { src: "/crab-cakes.jpg", alt: "Crab cakes" },
   { src: "/eggsbenedict2.jpg", alt: "Eggs Benedict" },
-  { src: "/salmon2.jpg", alt: "Pan-seared salmon" },
-  { src: "/food.jpg", alt: "Tavern plate" },
-  { src: "/privateroom.jpg", alt: "Private party room" },
 ];
 
 /** Hours — PLACEHOLDER. Replace with the real schedule. */
@@ -73,8 +69,8 @@ export const HOURS: { day: string; time: string }[] = [
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
   { day: "Wednesday", time: "11:00 AM – 10:00 PM" },
   { day: "Thursday", time: "11:00 AM – 10:00 PM" },
-  { day: "Friday", time: "11:00 AM – 11:00 PM" },
-  { day: "Saturday", time: "10:00 AM – 11:00 PM" },
+  { day: "Friday", time: "11:00 AM – 1:00 AM" },
+  { day: "Saturday", time: "10:00 AM – 1:00 AM" },
   { day: "Sunday", time: "10:00 AM – 9:00 PM" },
 ];
 

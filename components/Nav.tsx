@@ -121,8 +121,9 @@ export default function Nav() {
           />
         </Link>
 
-        {/* spacer to keep the logo centered opposite the hamburger */}
-        <span className="w-[26px]" aria-hidden="true" />
+        <div className="flex items-center gap-2">
+          <SocialLinks size="h-7 w-7" />
+        </div>
       </div>
 
       {/* mobile menu overlay */}

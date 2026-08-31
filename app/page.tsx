@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import SocialFeed from "@/components/SocialFeed";
 import { site, IMG, MARQUEE, FOOD_CATEGORIES } from "@/lib/site";
 
 export default function Home() {
@@ -14,8 +15,8 @@ export default function Home() {
             alt="The dining room and bar at Olde Dominion Tavern"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-void/15 via-void/5 to-void" />
-          <div className="absolute inset-0 bg-gradient-to-r from-void/35 via-void/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void" />
+          <div className="absolute inset-0 bg-gradient-to-r from-void/20 via-transparent to-transparent" />
         </div>
 
         <div className="relative mx-auto max-w-[1240px] px-6 pb-28 pt-28 md:px-8 md:pb-32 md:pt-36">
@@ -76,7 +77,7 @@ export default function Home() {
             <span />
           </div>
           <h2 className="font-display text-[clamp(30px,4.5vw,48px)] font-light leading-tight text-parchment">
-            A little more polish, none of the pretense.
+            Pull up a chair and stay a while.
           </h2>
           <p className="mt-6 font-sans text-[16px] font-light leading-relaxed text-parchdim">
             We&apos;re Haymarket&apos;s neighborhood tavern — the kind of place
@@ -194,6 +195,9 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      {/* SOCIAL FEED */}
+      <SocialFeed />
 
       {/* CLOSING CTA */}
       <section className="border-t border-line bg-char">

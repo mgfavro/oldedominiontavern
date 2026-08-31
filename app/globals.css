@@ -127,15 +127,16 @@
   .hero-text {
     color: #191917;
     text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.55),
-      0 0 12px rgba(255, 255, 255, 0.45);
+      0 1px 2px rgba(255, 255, 255, 0.75),
+      0 0 20px rgba(255, 255, 255, 0.65),
+      0 0 40px rgba(255, 255, 255, 0.45);
   }
   .hero-label {
     color: #04371d;
     font-weight: 600;
     text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.55),
-      0 0 10px rgba(255, 255, 255, 0.4);
+      0 1px 2px rgba(255, 255, 255, 0.75),
+      0 0 18px rgba(255, 255, 255, 0.6);
   }
 }
 

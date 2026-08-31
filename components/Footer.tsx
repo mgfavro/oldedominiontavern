@@ -69,16 +69,6 @@ export default function Footer() {
                 Order Online
               </a>
             </li>
-            <li>
-              <a
-                href={site.ext.ezcater}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-[14px] text-white/80 transition-colors hover:text-white"
-              >
-                Catering
-              </a>
-            </li>
           </ul>
         </div>
 

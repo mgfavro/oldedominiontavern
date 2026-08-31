@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import BookEventForm from "@/components/BookEventForm";
-import { site, IMG, EVENT_TYPES } from "@/lib/site";
+import { IMG, EVENT_TYPES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Large Parties & Events",
@@ -45,14 +45,6 @@ export default function EventsPage() {
           <div className="mt-9 flex flex-wrap gap-4">
             <a href="#book-event" className="btn btn-solid">
               Request to Book
-            </a>
-            <a
-              href={site.ext.ezcater}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-            >
-              Off-Site Catering
             </a>
           </div>
         </Reveal>
