@@ -44,6 +44,16 @@ export default function VisitPage() {
                 ))}
               </ul>
             </div>
+
+            <div>
+              <div className="label mb-3">Call Us</div>
+              <a
+                href={site.phone.href}
+                className="font-display text-[22px] text-brass transition-colors hover:text-brasslt"
+              >
+                {site.phone.display}
+              </a>
+            </div>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-4">

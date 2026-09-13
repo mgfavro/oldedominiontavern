@@ -47,6 +47,7 @@ const jsonLd = {
   "@type": "Restaurant",
   name: site.name,
   email: site.email,
+  telephone: site.phone.href.replace("tel:", ""),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.line1,

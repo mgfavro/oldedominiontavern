@@ -18,6 +18,12 @@ export default function Footer() {
             <br />
             {site.address.line2}
           </p>
+          <a
+            href={site.phone.href}
+            className="mt-3 inline-block font-sans text-[14px] text-white/80 transition-colors hover:text-white"
+          >
+            {site.phone.display}
+          </a>
         </div>
 
         {/* explore */}
