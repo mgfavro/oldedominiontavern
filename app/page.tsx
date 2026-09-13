@@ -13,7 +13,7 @@ export default function Home() {
           <img
             src={IMG.hero}
             alt="The dining room and bar at Olde Dominion Tavern"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover brightness-[0.85]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void" />
           <div className="absolute inset-0 bg-gradient-to-r from-void/20 via-transparent to-transparent" />
