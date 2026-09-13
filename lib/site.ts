@@ -26,6 +26,7 @@ export const nav: { label: string; href: string; external?: boolean }[] = [
   { label: "Large Parties", href: "/events" },
   { label: "Gallery", href: "/gallery" },
   { label: "Farm Van", href: "/farm-van" },
+  { label: "Dog of the Month", href: "/dog-of-the-month" },
 ];
 
 /** Brand marks (in /public). White wordmark for the dark nav/footer. */
@@ -42,6 +43,7 @@ export const IMG = {
   farmvan: "/farmvan.jpeg",
   gallery: "/frenchonion.jpg",
   visit: "/salmon.jpg",
+  dogOfMonth: "/photo-wall.jpeg",
 } as const;
 
 /** Gallery grid photos (in /public). */
