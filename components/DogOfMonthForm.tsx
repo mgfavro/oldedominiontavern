@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const WEB3FORMS_ACCESS_KEY = "681a8d99-0c35-4045-a280-458333533bd8";
+const WEB3FORMS_ACCESS_KEY = "20b55231-7502-46cd-91c1-bcdaa6eba0c2";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
