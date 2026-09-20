@@ -37,7 +37,10 @@ export default function CareersPage() {
 
         <Reveal delay={100}>
           <div className="mt-12 border border-line bg-void/40 p-4 md:p-6">
-            <TallyForm />
+            <TallyForm
+              src="https://tally.so/embed/lbp5KV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              title="Join Our Team — Application"
+            />
           </div>
         </Reveal>
       </section>

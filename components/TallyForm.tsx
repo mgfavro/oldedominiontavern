@@ -2,8 +2,6 @@
 
 import { useEffect } from "react";
 
-const TALLY_SRC =
-  "https://tally.so/embed/lbp5KV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
 const TALLY_SCRIPT = "https://tally.so/widgets/embed.js";
 
 declare global {
@@ -12,11 +10,18 @@ declare global {
   }
 }
 
+type TallyFormProps = {
+  /** Full Tally embed URL (include dynamicHeight=1 for auto-resize). */
+  src: string;
+  /** Accessible iframe title. */
+  title: string;
+};
+
 /**
- * Renders the Olde Dominion Tavern "Join Our Team" application form (Tally).
- * Loads Tally's embed script once so the iframe can auto-resize (dynamicHeight).
+ * Embeds a Tally form. Loads Tally's embed script once so the iframe can
+ * auto-resize (dynamicHeight) instead of scrolling.
  */
-export default function TallyForm() {
+export default function TallyForm({ src, title }: TallyFormProps) {
   useEffect(() => {
     const load = () => window.Tally?.loadEmbeds();
 
@@ -43,14 +48,14 @@ export default function TallyForm() {
 
   return (
     <iframe
-      data-tally-src={TALLY_SRC}
+      data-tally-src={src}
       loading="lazy"
       width="100%"
       height="500"
       frameBorder={0}
       marginHeight={0}
       marginWidth={0}
-      title="Join Our Team — Application"
+      title={title}
       className="w-full"
     />
   );

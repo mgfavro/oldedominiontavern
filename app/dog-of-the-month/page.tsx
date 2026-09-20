@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import DogOfMonthForm from "@/components/DogOfMonthForm";
+import TallyForm from "@/components/TallyForm";
 import { IMG } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -87,7 +87,7 @@ export default function DogOfTheMonthPage() {
         </Reveal>
       </section>
 
-      {/* NOMINATE — embed your Web3Forms form inside this section */}
+      {/* NOMINATE — Tally nomination form */}
       <section
         id="nominate"
         className="scroll-mt-24 border-t border-line bg-char"
@@ -105,8 +105,11 @@ export default function DogOfTheMonthPage() {
               </p>
             </div>
 
-            <div className="mt-10">
-              <DogOfMonthForm />
+            <div className="mt-10 border border-line bg-void/40 p-4 md:p-6">
+              <TallyForm
+                src="https://tally.so/embed/rjXpWR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                title="Dog of the Month — Nomination"
+              />
             </div>
           </Reveal>
         </div>
