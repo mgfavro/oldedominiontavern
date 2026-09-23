@@ -47,7 +47,7 @@ export default function ReservationsPage() {
               Find Us
             </Link>
             <Link href="/events" className="btn btn-ghost">
-              Large Parties
+              Groups & Events
             </Link>
           </div>
         </Reveal>

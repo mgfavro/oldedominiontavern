@@ -24,7 +24,7 @@ export const nav: { label: string; href: string; external?: boolean }[] = [
   { label: "Reservations", href: "/reservations" },
   { label: "Menus", href: "/menus" },
   { label: "Order Online", href: site.ext.toast, external: true },
-  { label: "Large Parties", href: "/events" },
+  { label: "Groups & Events", href: "/events" },
   { label: "Gallery", href: "/gallery" },
   { label: "Farm Van", href: "/farm-van" },
   { label: "Dog of the Month", href: "/dog-of-the-month" },

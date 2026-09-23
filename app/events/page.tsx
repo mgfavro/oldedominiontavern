@@ -5,7 +5,7 @@ import BookEventForm from "@/components/BookEventForm";
 import { IMG, EVENT_TYPES } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Large Parties & Events",
+  title: "Groups & Events",
   description:
     "Host your next celebration at Olde Dominion Tavern in Haymarket, VA. Private party room for birthdays, corporate dinners, showers, and holiday parties.",
 };
@@ -17,7 +17,7 @@ export default function EventsPage() {
         eyebrow="Gather"
         title={
           <>
-            Large Parties
+            Groups
             <br />& Events
           </>
         }
@@ -85,7 +85,7 @@ export default function EventsPage() {
             <div className="text-center">
               <span className="label">Book Your Event</span>
               <h2 className="mt-4 font-display text-[clamp(24px,4vw,38px)] font-light leading-tight text-parchment">
-                Request to Book a Large Party or Event
+                Request to Book a Group or Event
               </h2>
             </div>
 
