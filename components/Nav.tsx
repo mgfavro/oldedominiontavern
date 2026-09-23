@@ -6,7 +6,7 @@ import { site, nav, LOGO } from "@/lib/site";
 import { InstagramBadge, FacebookBadge } from "@/components/SocialIcons";
 
 const linkClass =
-  "font-sans text-[13px] font-medium uppercase tracking-[0.12em] text-white/85 transition-colors hover:text-white";
+  "rounded-sm px-2.5 py-1.5 whitespace-nowrap text-center font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-white/85 transition-all duration-200 hover:bg-black/20 hover:text-white hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)] xl:px-3 xl:text-[13px] xl:tracking-[0.12em]";
 
 function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
@@ -86,7 +86,7 @@ export default function Nav() {
         </div>
 
         {/* bottom zone: centered nav row */}
-        <nav className="flex items-center justify-center gap-x-10 pb-4">
+        <nav className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 pb-4 xl:gap-x-4">
           <NavLinks />
         </nav>
       </div>

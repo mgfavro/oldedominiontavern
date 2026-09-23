@@ -33,10 +33,10 @@ export default function MenusPage() {
                 href={menu.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col items-center justify-center border border-line bg-char2 px-6 py-14 text-center transition-colors hover:border-brass hover:bg-char"
+                className="group flex h-full flex-col items-center justify-center border border-line bg-char2 px-6 py-14 text-center transition-all duration-200 hover:-translate-y-0.5 hover:border-brass hover:bg-char hover:shadow-[0_16px_36px_rgba(25,25,23,0.16)]"
               >
                 <span className="label">View Menu</span>
-                <h2 className="mt-4 font-display text-[clamp(22px,3vw,30px)] font-light leading-tight text-parchment">
+                <h2 className="mt-4 whitespace-nowrap font-display text-[clamp(20px,2.4vw,28px)] font-light leading-tight text-parchment">
                   {menu.title}
                 </h2>
                 <p className="mt-3 font-sans text-[14px] font-light text-parchdim">
