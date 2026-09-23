@@ -8,35 +8,32 @@ import { InstagramBadge, FacebookBadge } from "@/components/SocialIcons";
 const linkClass =
   "rounded-sm px-2.5 py-1.5 whitespace-nowrap text-center font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-white/85 transition-all duration-200 hover:bg-black/20 hover:text-white hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)] xl:px-3 xl:text-[13px] xl:tracking-[0.12em]";
 
-function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
+type NavItem = (typeof nav)[number];
+
+function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void }) {
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavigate}
+        className={linkClass}
+      >
+        {item.label}
+      </a>
+    );
+  }
+
   return (
-    <>
-      {nav.map((n) =>
-        n.external ? (
-          <a
-            key={n.label}
-            href={n.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onNavigate}
-            className={linkClass}
-          >
-            {n.label}
-          </a>
-        ) : (
-          <Link
-            key={n.label}
-            href={n.href}
-            onClick={onNavigate}
-            className={linkClass}
-          >
-            {n.label}
-          </Link>
-        ),
-      )}
-    </>
+    <Link href={item.href} onClick={onNavigate} className={linkClass}>
+      {item.label}
+    </Link>
   );
 }
+
+const mainNav = nav.filter((item) => item.href !== "/careers");
+const joinNav = nav.find((item) => item.href === "/careers");
 
 function SocialLinks({ size = "h-9 w-9" }: { size?: string }) {
   return (
@@ -85,9 +82,17 @@ export default function Nav() {
           </div>
         </div>
 
-        {/* bottom zone: centered nav row */}
-        <nav className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 pb-4 xl:gap-x-4">
-          <NavLinks />
+        {/* bottom zone: main links centered, Join Our Team pinned right */}
+        <nav className="grid grid-cols-[1fr_auto_1fr] items-center pb-4">
+          <div />
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 xl:gap-x-4">
+            {mainNav.map((item) => (
+              <NavLink key={item.label} item={item} />
+            ))}
+          </div>
+          <div className="flex justify-end">
+            {joinNav ? <NavLink item={joinNav} /> : null}
+          </div>
         </nav>
       </div>
 
