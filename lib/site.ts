@@ -29,6 +29,7 @@ export const nav: { label: string; href: string; external?: boolean }[] = [
   { label: "Farm Van", href: "/farm-van" },
   { label: "Dog of the Month", href: "/dog-of-the-month" },
   { label: "Join Our Team", href: "/careers" },
+  { label: "Join Our Newsletter", href: "/newsletter" },
 ];
 
 /** Brand marks (in /public). White wordmark for the dark nav/footer. */
@@ -47,6 +48,7 @@ export const IMG = {
   visit: "/salmon.jpg",
   dogOfMonth: "/photo-wall.jpeg",
   careers: "/photo-wall.jpeg",
+  newsletter: "/photo-wall.jpeg",
 } as const;
 
 /** Gallery grid photos (in /public). */

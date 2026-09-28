@@ -6,11 +6,22 @@ import { site, nav, LOGO } from "@/lib/site";
 import { InstagramBadge, FacebookBadge } from "@/components/SocialIcons";
 
 const linkClass =
-  "rounded-sm px-2.5 py-1.5 whitespace-nowrap text-center font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-white/85 transition-all duration-200 hover:bg-black/20 hover:text-white hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)] xl:px-3 xl:text-[13px] xl:tracking-[0.12em]";
+  "inline-flex shrink-0 items-center whitespace-nowrap rounded-sm px-2 py-1.5 text-center font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-white/85 transition-all duration-200 hover:bg-black/20 hover:text-white hover:shadow-[0_8px_22px_rgba(0,0,0,0.45)] xl:px-2.5 xl:text-[13px] xl:tracking-[0.1em]";
+
+const joinClass =
+  `${linkClass} w-full justify-center border border-white/35 px-3 hover:border-white/70`;
 
 type NavItem = (typeof nav)[number];
 
-function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void }) {
+function NavLink({
+  item,
+  onNavigate,
+  className = linkClass,
+}: {
+  item: NavItem;
+  onNavigate?: () => void;
+  className?: string;
+}) {
   if (item.external) {
     return (
       <a
@@ -18,7 +29,7 @@ function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void 
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavigate}
-        className={linkClass}
+        className={className}
       >
         {item.label}
       </a>
@@ -26,14 +37,15 @@ function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void 
   }
 
   return (
-    <Link href={item.href} onClick={onNavigate} className={linkClass}>
+    <Link href={item.href} onClick={onNavigate} className={className}>
       {item.label}
     </Link>
   );
 }
 
-const mainNav = nav.filter((item) => item.href !== "/careers");
-const joinNav = nav.find((item) => item.href === "/careers");
+const SIDE_HREFS = new Set(["/careers", "/newsletter"]);
+const mainNav = nav.filter((item) => !SIDE_HREFS.has(item.href));
+const sideNav = nav.filter((item) => SIDE_HREFS.has(item.href));
 
 function SocialLinks({ size = "h-9 w-9" }: { size?: string }) {
   return (
@@ -82,16 +94,17 @@ export default function Nav() {
           </div>
         </div>
 
-        {/* bottom zone: main links centered, Join Our Team pinned right */}
-        <nav className="grid grid-cols-[1fr_auto_1fr] items-center pb-4">
-          <div />
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 xl:gap-x-4">
+        {/* bottom zone: main links in one row, join links stacked on the right */}
+        <nav className="flex items-center justify-between gap-6 pb-4">
+          <div className="flex min-w-0 flex-1 flex-nowrap items-center justify-start gap-x-1 xl:gap-x-3">
             {mainNav.map((item) => (
               <NavLink key={item.label} item={item} />
             ))}
           </div>
-          <div className="flex justify-end">
-            {joinNav ? <NavLink item={joinNav} /> : null}
+          <div className="flex shrink-0 flex-col items-stretch gap-1">
+            {sideNav.map((item) => (
+              <NavLink key={item.label} item={item} className={joinClass} />
+            ))}
           </div>
         </nav>
       </div>
